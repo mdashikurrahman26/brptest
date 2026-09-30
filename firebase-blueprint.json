@@ -1,0 +1,234 @@
+{
+  "entities": {
+    "Leader": {
+      "title": "Leader",
+      "description": "Leadership member of the organization",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "nameEn": { "type": "string" },
+        "position": { "type": "string" },
+        "positionEn": { "type": "string" },
+        "photoUrl": { "type": "string" },
+        "bio": { "type": "string" },
+        "order": { "type": "number" },
+        "published": { "type": "boolean" },
+        "createdAt": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["name", "position", "order"]
+    },
+    "News": {
+      "title": "News",
+      "description": "News article or press release",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "slug": { "type": "string" },
+        "excerpt": { "type": "string" },
+        "content": { "type": "string" },
+        "coverImage": { "type": "string" },
+        "category": { "type": "string" },
+        "author": { "type": "string" },
+        "published": { "type": "boolean" },
+        "publishedAt": { "type": "string" },
+        "createdAt": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["title", "slug", "excerpt", "content", "category"]
+    },
+    "Event": {
+      "title": "Event",
+      "description": "Institutional event or convention",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "date": { "type": "string" },
+        "time": { "type": "string" },
+        "location": { "type": "string" },
+        "coverImage": { "type": "string" },
+        "status": { "type": "string", "enum": ["upcoming", "completed", "cancelled"] },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["title", "date", "location"]
+    },
+    "MediaItem": {
+      "title": "MediaItem",
+      "description": "Photo, video or press archive entry",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "type": { "type": "string", "enum": ["photo", "video", "press"] },
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "url": { "type": "string" },
+        "thumbnail": { "type": "string" },
+        "date": { "type": "string" },
+        "published": { "type": "boolean" }
+      },
+      "required": ["type", "title", "url"]
+    },
+    "Document": {
+      "title": "Document",
+      "description": "Official policy, publication, or constitutional document",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "category": { "type": "string" },
+        "description": { "type": "string" },
+        "fileUrl": { "type": "string" },
+        "fileSize": { "type": "string" },
+        "published": { "type": "boolean" },
+        "publishedAt": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["title", "category", "fileUrl"]
+    },
+    "ContactMessage": {
+      "title": "ContactMessage",
+      "description": "Inquiry submitted by a public visitor",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "email": { "type": "string" },
+        "subject": { "type": "string" },
+        "message": { "type": "string" },
+        "status": { "type": "string", "enum": ["unread", "read", "archived"] },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["name", "email", "subject", "message"]
+    },
+    "FAQ": {
+      "title": "FAQ",
+      "description": "Frequently asked question item",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "question": { "type": "string" },
+        "answer": { "type": "string" },
+        "category": { "type": "string" },
+        "order": { "type": "number" },
+        "published": { "type": "boolean" }
+      },
+      "required": ["question", "answer"]
+    },
+    "Program": {
+      "title": "Program",
+      "description": "Point in the 10-point policy framework",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "number": { "type": "number" },
+        "title": { "type": "string" },
+        "titleEn": { "type": "string" },
+        "summary": { "type": "string" },
+        "details": { "type": "string" },
+        "keyObjectives": { "type": "string" },
+        "icon": { "type": "string" }
+      },
+      "required": ["number", "title", "summary"]
+    },
+    "SiteSettings": {
+      "title": "SiteSettings",
+      "description": "Global institutional information and configurations",
+      "type": "object",
+      "properties": {
+        "siteName": { "type": "string" },
+        "siteNameEn": { "type": "string" },
+        "tagline": { "type": "string" },
+        "heroTitle": { "type": "string" },
+        "heroDescription": { "type": "string" },
+        "contactEmail": { "type": "string" },
+        "phone": { "type": "string" },
+        "address": { "type": "string" },
+        "socialFacebook": { "type": "string" },
+        "socialTwitter": { "type": "string" },
+        "socialYoutube": { "type": "string" },
+        "footerText": { "type": "string" }
+      }
+    },
+    "PartyMember": {
+      "title": "PartyMember",
+      "description": "Registered party member information",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "memberId": { "type": "string" },
+        "name": { "type": "string" },
+        "division": { "type": "string" },
+        "district": { "type": "string" },
+        "upazila": { "type": "string" },
+        "phone": { "type": "string" },
+        "email": { "type": "string" },
+        "occupation": { "type": "string" },
+        "notes": { "type": "string" },
+        "status": { "type": "string", "enum": ["active", "verified", "pending"] },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "memberId", "name", "division", "phone"]
+    },
+    "AdminUser": {
+      "title": "AdminUser",
+      "description": "Authorized administrator profile",
+      "type": "object",
+      "properties": {
+        "email": { "type": "string" },
+        "role": { "type": "string", "enum": ["admin", "editor"] },
+        "displayName": { "type": "string" }
+      },
+      "required": ["email", "role"]
+    }
+  },
+  "firestore": {
+    "/leaders/{leaderId}": {
+      "schema": "Leader",
+      "description": "Leadership profiles"
+    },
+    "/news/{newsId}": {
+      "schema": "News",
+      "description": "News articles and press statements"
+    },
+    "/events/{eventId}": {
+      "schema": "Event",
+      "description": "Events and meetings"
+    },
+    "/media/{mediaId}": {
+      "schema": "MediaItem",
+      "description": "Photos, videos, and media archive"
+    },
+    "/documents/{docId}": {
+      "schema": "Document",
+      "description": "Official publications and policy documents"
+    },
+    "/contactMessages/{messageId}": {
+      "schema": "ContactMessage",
+      "description": "Visitor contact queries (private to admin)"
+    },
+    "/members/{memberId}": {
+      "schema": "PartyMember",
+      "description": "Registered party member applications"
+    },
+    "/faq/{faqId}": {
+      "schema": "FAQ",
+      "description": "Frequently asked questions"
+    },
+    "/programs/{programId}": {
+      "schema": "Program",
+      "description": "10-point policy program points"
+    },
+    "/siteSettings/{settingId}": {
+      "schema": "SiteSettings",
+      "description": "Configurable site details"
+    },
+    "/adminUsers/{uid}": {
+      "schema": "AdminUser",
+      "description": "Admin access control whitelist"
+    }
+  }
+}

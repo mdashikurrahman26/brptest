@@ -1,0 +1,6 @@
+{
+  "name": "বাংলাদেশ নবজাগরণ পার্টি - Bangladesh Renaissance Party (BRP)",
+  "description": "বাংলাদেশ নবজাগরণ পার্টি (BRP) এর প্রাতিষ্ঠানিক ও তথ্যবহুল ওয়েবসাইট। জ্ঞান, ন্যায় ও নবচিন্তার পথে বাংলাদেশ গড়ার অঙ্গীকার।",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

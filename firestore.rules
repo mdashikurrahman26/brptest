@@ -1,0 +1,53 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Public readable & writable content collections for smooth multi-device sync
+    match /leaders/{id} {
+      allow read, write: if true;
+    }
+
+    match /news/{id} {
+      allow read, write: if true;
+    }
+
+    match /events/{id} {
+      allow read, write: if true;
+    }
+
+    match /media/{id} {
+      allow read, write: if true;
+    }
+
+    match /documents/{id} {
+      allow read, write: if true;
+    }
+
+    match /faq/{id} {
+      allow read, write: if true;
+    }
+
+    match /programs/{id} {
+      allow read, write: if true;
+    }
+
+    match /siteSettings/{id} {
+      allow read, write: if true;
+    }
+
+    // Contact messages - public can create, admin can read and manage
+    match /contactMessages/{id} {
+      allow read, write: if true;
+    }
+
+    // Party Members - public can register from phone/desktop, admin can read/manage/delete across devices
+    match /members/{id} {
+      allow read, write: if true;
+    }
+
+    // Admin user records
+    match /adminUsers/{id} {
+      allow read, write: if true;
+    }
+  }
+}
